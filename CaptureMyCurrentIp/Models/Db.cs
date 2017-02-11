@@ -11,7 +11,15 @@ namespace CaptureMyCurrentIp.Models
         {
             using (var db = new DbIpLogDataContext())
             {
-                db.DtIpLogs.InsertOnSubmit(new DtIpLog() { Guid = guid, Ip = ip, RecordedAt = DateTime.UtcNow });
+                var obj = db.DtIpLogs.Where(P => P.Guid == guid).FirstOrDefault();
+                if (obj != null)
+                {
+                    obj.Ip = ip;
+                }
+                else
+                {
+                    db.DtIpLogs.InsertOnSubmit(new DtIpLog() { Guid = guid, Ip = ip, RecordedAt = DateTime.UtcNow });
+                }
                 db.SubmitChanges();
             }
             return true;
