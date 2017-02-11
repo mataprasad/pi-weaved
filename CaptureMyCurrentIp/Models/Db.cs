@@ -15,6 +15,7 @@ namespace CaptureMyCurrentIp.Models
                 if (obj != null)
                 {
                     obj.Ip = ip;
+                    obj.RecordedAt = DateTime.UtcNow;
                 }
                 else
                 {
