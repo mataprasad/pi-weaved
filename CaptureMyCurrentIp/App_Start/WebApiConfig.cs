@@ -9,6 +9,8 @@ namespace CaptureMyCurrentIp
     {
         public static void Register(HttpConfiguration config)
         {
+            config.Formatters.Clear();
+            config.Formatters.Add(new System.Net.Http.Formatting.JsonMediaTypeFormatter());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{ip}",
