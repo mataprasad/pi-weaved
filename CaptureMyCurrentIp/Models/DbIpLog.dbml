@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ScottDbClean" Class="DbIpLogDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=POWERPC\MSSQLPOWERPC;Initial Catalog=ScottDbClean;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ScottDbCleanConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DtIpLog" Member="DtIpLogs">
+    <Type Name="DtIpLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Guid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Ip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RecordedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
